@@ -41,7 +41,7 @@ Will get the result in submission_lstmcnn.csv
 
 ## Ensemble
 Run ```python test2.py``` 
-Will get final submission which we submit in the competition.
+Will get final submission which we submitted in the competition.
 
 ## Competition Results
 Results of Competition.
