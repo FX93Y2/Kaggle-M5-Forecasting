@@ -36,16 +36,15 @@ Results of feature importance.
 
 ## ANN(LSTM+CNN) Model
 Artifical Neural Networks is composed of artificial neurons and connected with corresponding layers.
-First preprocess train-test data, run ```python make_train_test_data.py```
+First preprocess train-test data, run ```python make_train_test_data.py``` to get dataset product.csv, train.csv and test.csv for trainning CNN+LSTM model.
 After get the data prepared, run ```python m5_full_train.py```
 Will get the result in submission_lstmcnn.csv
 
 ## Tuning
 
-Overfitting is the main problem we have to deal with. To avoid overfitting, we need to choose the parameters that have the best performance in the validation dataset.
+Overfitting is the main problem we have to deal with. To avoid overfitting, we need to choose the parameters with the best performance in the validation dataset.
 For lightgbm, I tried different learning rate and 0.075 end up giving us the lowest loss. Final parameters for lightgbm: ```params = dict(objective="tweedie", metric="rmse", force_row_wise=True, learning_rate=0.075, sub_row=0.75, bagging_freq=1, lambda_l2=0.1, verbosity=1, num_iterations=1500)```
-For NN model, I only used LSTM at first, but result wasn't saved since it was processed on my school's computer. I later added CNN, which lead to a better acuracy. Details and results are shown in submission_lstmcnn.csv. 
-## Ensemble
+For NN model, I only used LSTM at first, but the result was not saved since it was processed on my school's computer. I later added CNN, which lead to better accuracy. Adjustable parameters are epochs, weight decay, batch size, layers of embedding, hidden layers, output layers, long short term memory layers, and classifier layers. After multiple times of tuning,  ```{'epochs': 30, 'lr': 0.0001, 'weight_decay': 0.0005, 'batch_size': 16, 'embedding_dim': 10, 'hidden_dim': 48, 'output_dim': 1, 'n_lstm_layer': 2, 'n_classifier_layer': 2, 'model': 'm5'}``` will lead to the most stable results.
 Run ```python test2.py``` 
 Will get final submission which we submitted in the competition.
 
