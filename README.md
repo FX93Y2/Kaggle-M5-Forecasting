@@ -49,7 +49,7 @@ Run ```python test2.py```
 Will get final submission which we submitted in the competition.
 ## Report
 
-```Report.pdf```
+See ```Report.pdf```in file
 
 
 ## Competition Result
