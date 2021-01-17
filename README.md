@@ -44,9 +44,13 @@ Will get the result in submission_lstmcnn.csv
 
 Overfitting is the main problem we have to deal with. To avoid overfitting, we need to choose the parameters with the best performance in the validation dataset.
 For lightgbm, I tried different learning rate and 0.075 end up giving us the lowest loss. Final parameters for lightgbm:
+
 ```params = dict(objective="tweedie", metric="rmse", force_row_wise=True, learning_rate=0.075, sub_row=0.75, bagging_freq=1, lambda_l2=0.1, verbosity=1, num_iterations=1500)```
+
 For NN model, I only used LSTM at first, but the result was not saved since it was processed on my school's computer. I later added CNN, which lead to better accuracy. Adjustable parameters are epochs, weight decay, batch size, layers of embedding, hidden layers, output layers, long short term memory layers, and classifier layers. After multiple times of tuning, 
+
 ```{'epochs': 30, 'lr': 0.0001, 'weight_decay': 0.0005, 'batch_size': 16, 'embedding_dim': 10, 'hidden_dim': 48, 'output_dim': 1, 'n_lstm_layer': 2, 'n_classifier_layer': 2, 'model': 'm5'}```
+
 will lead to the most stable results.
 Run ```python test2.py``` 
 Will get final submission which we submitted in the competition.
