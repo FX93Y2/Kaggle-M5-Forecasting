@@ -53,7 +53,6 @@ See ```Report.pdf```in file
 
 
 ## Competition Result
-Competition Result
 <img src="./vis/Result.png" width="800px">
 
 
