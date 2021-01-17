@@ -47,6 +47,10 @@ For lightgbm, I tried different learning rate and 0.075 end up giving us the low
 For NN model, I only used LSTM at first, but the result was not saved since it was processed on my school's computer. I later added CNN, which lead to better accuracy. Adjustable parameters are epochs, weight decay, batch size, layers of embedding, hidden layers, output layers, long short term memory layers, and classifier layers. After multiple times of tuning,  ```{'epochs': 30, 'lr': 0.0001, 'weight_decay': 0.0005, 'batch_size': 16, 'embedding_dim': 10, 'hidden_dim': 48, 'output_dim': 1, 'n_lstm_layer': 2, 'n_classifier_layer': 2, 'model': 'm5'}``` will lead to the most stable results.
 Run ```python test2.py``` 
 Will get final submission which we submitted in the competition.
+## Report
+
+```Report.pdf```
+
 
 ## Competition Result
 Competition Result
